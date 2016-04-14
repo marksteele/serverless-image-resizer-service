@@ -101,6 +101,8 @@ First, create a resource called `resize`. Then, create a sub-resource to `resize
 
 Finally on `{image}`, create a GET method. The GET method needs to invoke the Lambda function we created earlier.
 
+![](api-gw.png)
+
 Once that's done, we're going to do all the API gateway wiring that will allow our Lambda to return a redirect after creating images in S3.
 
 ### Method request
