@@ -91,7 +91,7 @@ We're going to point a first instance of Cloudfront to point to our S3 'img-resi
 
 Head on over to cloudfront and create a new distribution.
 
-Origin domain name is the 'img-resized' static website S3 bucket URL. Select other settings to something that makes sense. I customized the caching settings.
+Origin domain name is the 'img-resized' static website S3 bucket hostname. Select other settings to something that makes sense. I customized the caching settings.
 
 ## API gateway
 
@@ -229,6 +229,8 @@ This is what the swagger definition for the API looks like:
 Now we're going to setup a second Cloudfront distribution which will point to our API gateway invocation URL.
 
 Same drill as before, we only need specify the API gateway invocation hostname as origin domain.
+
+In the origin settings, you'll want to force it to always use HTTPS, as API gateway does not support HTTP.
 
 Note the new cloudfront URL when you're done, we'll need it.
 
