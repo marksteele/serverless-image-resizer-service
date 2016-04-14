@@ -270,3 +270,8 @@ At this point, we're done. If our Cloudfront #1 domain is img1.cloudfront.net, a
 During the initial warm-up period, cloudfront will have cached 302 redirect responses (for up to an hour so I'm told), after which everything will go through Cloudfront #1. This should effectively limit calls to API gateway to a single time when generating previously un-resized images.
 
 
+# Closing thoughts
+
+This was really a hack due to the fact that API gateway does not support returning binary reponses. I'm hoping they can fix this soon, which would eliminate the redirects in this type of approach as well as the need for multiple cloudfront instances.
+
+
